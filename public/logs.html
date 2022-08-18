@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1>Past logs</h1>
+    <p> <a href="index.html">Return home</a> </p>
+    <!-- Script -->
+    <script>
+        async function getData() {
+            const response = await fetch('/api');
+            const data = await response.json();
+            console.log(data);
+            
+            for(item of data) {
+                const div = document.createElement('div');
+                const mood = document.createElement('div');
+                const date = document.createElement('div');
+                const geo = document.createElement('div');
+                
+
+                mood.textContent = `Mood: ${item.mood}`;
+                geo.textContent = `${item.lat}, ${item.lon}`;
+                const dateString = new Date(item.timestamp).toLocaleString();
+                date.textContent = dateString;
+                
+                div.append(mood, geo, date);
+                document.body.append(div);
+            }
+        }
+        getData();
+
+        
+    </script>
+
+</body>
+</html>
