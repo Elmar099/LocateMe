@@ -42,10 +42,9 @@
         done.textContent = 'Logged! Check past logs';
         if ('geolocation' in navigator) {
             navigator.geolocation.getCurrentPosition(async position => {
-                const lat = 37.7749;
-                const lon = -122.4194;
-                /*const lat = position.coords.latitude;
-                const lon = position.coords.longitude;*/
+                
+                const lat = position.coords.latitude;
+                const lon = position.coords.longitude;
                 const mood = document.getElementById('mood').value;
 
                 document.getElementById('lat').textContent = lat;
