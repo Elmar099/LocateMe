@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {"lat":37.3424128,"lon":-122.0476928,"rest":"Nobu","timestamp":1663110623683,"_id":"5ZqyGzPiotNDXIOC"}
 {"lat":37.3424128,"lon":-122.0476928,"rest":"Chimek","timestamp":1663110857948,"_id":"C1WpYbwWev0ujMcQ"}
 {"lat":37.3424128,"lon":-122.0476928,"rest":"Cheesecake Factory","timestamp":1663110872677,"_id":"Yt93iMmFC2VpuCXY"}
@@ -5,3 +6,6 @@
 {"lat":37.3424128,"lon":-122.0476928,"rest":"Nobu","timestamp":1663110951276,"_id":"3mH32tvPwS229FSk"}
 {"lat":37.3424128,"lon":-122.0476928,"rest":"McDonalds","timestamp":1663110988091,"_id":"xR4xTxBin7WMKYQ4"}
 {"lat":37.3424128,"lon":-122.0476928,"rest":"Nobu","timestamp":1663111018206,"_id":"qeKU1U1wIFWyFum1"}
+=======
+{"lat":37.7749,"lon":-122.4194,"mood":"happy","timestamp":1660794996540,"_id":"2jTBOMPtVWAV1YUK"}
+>>>>>>> 08509578b3c4db288067da234bf7c4ae60dadec4
