@@ -18,20 +18,20 @@
 
 </head>
 <body>
-    <h1 id="head">Where am I?</h1>
+    <h1 id="head">~Best Restaurants~</h1>
     
     <div class="container">
         <p id="done"></p>
-    <p>Latitude: <span id="lat"></span></p>
-    <p>Longitude: <span id="lon"></span></p>
-    <label for="">I feel: <input type="text" value="happy" id="mood" placeholder="Your mood"></label>
+    <p>Latitude: <span id="lat">12.5982837</span></p>
+    <p>Longitude: <span id="lon">152.918774</span></p>
+    <label for="">Name of the Restaurant: <input type="text" value="Nobu" id="rest" placeholder="Name"></label>
     
     <div class="button-div">
-        <button id="btn">Get my Location</button>
+        <button id="btn">Log my Location</button>
     </div>
     
     
-    <p><a href="logs.html">Check Logs</a></p>
+    <p ><a class="logs" href="logs.html">Check Logs</a></p>
 </div>
     <div id="map"></div>
 <!-- Script -->
@@ -45,12 +45,12 @@
                 
                 const lat = position.coords.latitude;
                 const lon = position.coords.longitude;
-                const mood = document.getElementById('mood').value;
+                const rest = document.getElementById('rest').value;
 
                 document.getElementById('lat').textContent = lat;
                 document.getElementById('lon').textContent = lon;
 
-    const mymap = L.map('map').setView([lat, lon], 11);
+    const mymap = L.map('map').setView([37.3424128, -122.0476928], 12);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
@@ -64,7 +64,7 @@
         radius: 600
     }).addTo(mymap);
 
-            const data = { lat, lon, mood };
+            const data = { lat, lon, rest };
             const options = {
                 method: 'POST',
                 headers: {"Content-Type": "application/json" },
@@ -79,6 +79,7 @@
 }
     })   
 </script>
+<footer class="footer">Copyright © 2022 All rights reserved. | Created By Elmar Imanov</footer>
 </body>
 </html>
 

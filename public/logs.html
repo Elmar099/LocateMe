@@ -5,38 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles2.css">
     
 </head>
 <body>
-    <h1>Past logs</h1>
-    <p> <a href="index.html">Return home</a> </p>
+    <h1 id="head">Past logs</h1>
+    <button class="logs"><a href="index.html">Return home</a> </button>
+    
     <!-- Script -->
     <script>
         async function getData() {
             const response = await fetch('/api');
             const data = await response.json();
             console.log(data);
-            
+            const container = document.createElement('section');
             for(item of data) {
                 const div = document.createElement('div');
-                const mood = document.createElement('div');
-                const date = document.createElement('div');
-                const geo = document.createElement('div');
+                const rest = document.createElement('aside');
+                const date = document.createElement('aside');
+                const geo = document.createElement('aside');
                 
 
-                mood.textContent = `Mood: ${item.mood}`;
-                geo.textContent = `${item.lat}, ${item.lon}`;
-                const dateString = new Date(item.timestamp).toLocaleString();
+                rest.textContent = `Restaurant: ${item.rest}`;
+                geo.textContent = `Lat: ${item.lat}, Lon: ${item.lon}`;
+                const dateString = `Time: ${new Date(item.timestamp).toLocaleString()}`;
                 date.textContent = dateString;
                 
-                div.append(mood, geo, date);
-                document.body.append(div);
+                div.append(rest, geo, date);
+                container.append(div);
+                document.body.append(container);
             }
         }
         getData();
 
         
     </script>
-
+<footer class="footer">Copyright © 2022 All rights reserved. | Created By Elmar Imanov</footer>
 </body>
 </html>
